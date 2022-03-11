@@ -6,3 +6,8 @@ https = protocol
 youtube.com = host
 watch = path
 ?v=something = query string
+
+Fiday, March 11th 
+Review:
+- How Backend Works
+- MVC Concept
