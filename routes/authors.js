@@ -41,17 +41,22 @@ router.post('/', async (req, res) => {
             errorMessage: 'Error Creating Author'
         })  
     }
-    // author.save((err, newAuthor) => {
-    //     if (err) {
-    //         res.render('authors/new', {
-    //             author: author,
-    //             errorMessage: 'Error creating Author'
-    //         })
-    //     } else {
-    //         // res.redirect(`authors/${newAuthor.id}`)
-    //         res.redirect('authors')
-    //     }
-    // })
+})
+
+router.get('/:id', async (req, res) => {
+    res.send('Show Author ' + req.params.id)
+})
+
+router.get('/:id/edit', async (req, res) => {
+    res.send('Edit Author ' + req.params.id)
+})
+
+router.put('/:id', async (req, res) => {
+    res.send('Update Author ' + req.params.id)
+})
+
+router.delete('/:id', async (req, res) => {
+    res.send('Delete Author ' + req.params.id)
 })
 
 module.exports = router
