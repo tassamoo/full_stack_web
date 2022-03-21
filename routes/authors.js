@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const Author = require('../models/author')
+const Book = require('../models/book')
 
 // All authors route
 router.get('/', async (req, res) => {
@@ -33,7 +34,7 @@ router.post('/', async (req, res) => {
     })
     try {
         const newAuthor = await author.save()
-        res.red>irect(`authors/${newAuthor.id}`)
+        res.redirect(`authors/${newAuthor.id}`)
     } catch {
         res.render('authors/new', {
             author: author,
@@ -60,6 +61,7 @@ router.put('/:id', async (req, res) => {
     let author 
     try {
         author = await Author.findById(req.params.id)
+        author.name = req.body.name
         await author.save()
         res.redirect(`/authors/${author.id}`)
     } catch {
@@ -75,7 +77,18 @@ router.put('/:id', async (req, res) => {
 })
 
 router.delete('/:id', async (req, res) => {
-    res.send('Delete Author ' + req.params.id)
+    let author 
+    try {
+        author = await Author.findById(req.params.id)
+        await author.remove()
+        res.redirect('/authors')
+    } catch {
+        if (author == null) {
+            res.redirect('/')
+        } else {
+          res.redirect(`/authors/${author.id}`)
+        }
+    }
 })
 
 module.exports = router
