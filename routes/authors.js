@@ -33,8 +33,7 @@ router.post('/', async (req, res) => {
     })
     try {
         const newAuthor = await author.save()
-        // res.redirect(`authors/${newAuthor.id}`)
-        res.redirect('authors')
+        res.red>irect(`authors/${newAuthor.id}`)
     } catch {
         res.render('authors/new', {
             author: author,
@@ -58,7 +57,21 @@ router.get('/:id/edit', async (req, res) => {
 })
 
 router.put('/:id', async (req, res) => {
-    res.send('Update Author ' + req.params.id)
+    let author 
+    try {
+        author = await Author.findById(req.params.id)
+        await author.save()
+        res.redirect(`/authors/${author.id}`)
+    } catch {
+        if (author == null) {
+            res.redirect('/')
+        } else {
+          res.render('authors/edit', {
+            author: author,
+            errorMessage: 'Error Updating Author'
+          })  
+        }
+    }
 })
 
 router.delete('/:id', async (req, res) => {
