@@ -11,3 +11,6 @@ Fiday, March 11th
 Review:
 - How Backend Works
 - MVC Concept
+
+Tuesday, March 22nd
+Running out of energy
