@@ -83,7 +83,7 @@ router.put('/:id', async (req, res) => {
         book = await Book.findById(req.params.id)
         book.title = req.body.title
         book.author = req.body.author
-        book.publishDate = new date(req.body.publishDate)
+        book.publishDate = new Date(req.body.publishDate)
         book.pageCount = req.body.pageCount
         book.description = req.body.description
         if(req.body.cover != null && req.body.cover != '') {
@@ -110,7 +110,7 @@ async function renderEditPage(res, book, hasError = false) {
     renderFormPage(res, book, 'edit', hasError)
 }
 
-async function renderFormPage(res, book, hasError = false) {
+async function renderFormPage(res, book,form, hasError = false) {
     try {
         const authors = await Author.find({})
         const params = {
