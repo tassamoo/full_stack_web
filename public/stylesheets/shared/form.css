@@ -23,7 +23,7 @@
   }
   
   .form-item-no-grow {
-    flex-grow: 0;
+    flex-grow: 0.25;
   }
   
   .form-row-end {
@@ -64,8 +64,17 @@
   
   .filepond--root {
     font-family: 'Gotham Rounded';
-    font-size: 0.5rem;
+    font-size: 0.75rem;
 
+  }
+
+  .filepond--root .filepond--drop-label {
+    display: flex;
+    flex-direction: column;
+    margin-left: 0rem;
+    flex-grow: 1;
+    flex-basis: 0;
+    justify-content: center;
   }
   
   .filepond--root .filepond--credits {
