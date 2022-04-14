@@ -1,8 +1,9 @@
 # full_stack_web
-
-Practice the concept of Backend Development from Web Dev Simplified Channel
-
-(https://www.youtube.com/watch?v=XlvsJLer_No&list=PLZlA0Gpn_vH8jbFkBjOuFjhxANC63OmXM)
+In this project, I learned how to build simple library app that have CRUD(Create, Read, Update, Delete) function. I also learn the basics of MVC architecture and routing concepts.
 
 Deployed App Link:
 https://mybrary-moo.herokuapp.com/
+
+Credit:
+Web Dev Simplified Youtube Channel
+(https://www.youtube.com/watch?v=XlvsJLer_No&list=PLZlA0Gpn_vH8jbFkBjOuFjhxANC63OmXM)
